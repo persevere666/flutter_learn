@@ -3,6 +3,7 @@ import 'package:flutter_learn/foundation/KeyDemo2.dart';
 import 'package:flutter_learn/foundation/KeyDemo3.dart';
 import 'package:flutter_learn/material_widgets/material_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/widgets/widgets_widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,9 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
+      appBar: AppBar(
+        title: const Text("Welcome to the world of flutter"),
+      ),
       body: NestedScrollView(
         headerSliverBuilder: (ctx, innerBoxIsScrolled){
           return [
@@ -120,11 +121,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (ctx) => const KeyDemo3()
+                              builder: (ctx) =>  const WidgetsWidgets()
                           )
                       );
                     },
-                    child: const Text("widgets", selectionColor: Colors.red,)
+                    child: const Text("widgets_widgets", selectionColor: Colors.red,)
                 ),
               ),
             ],
