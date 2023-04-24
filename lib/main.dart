@@ -1,9 +1,13 @@
+import 'package:flutter_learn/Get/GetxDemo.dart';
 import 'package:flutter_learn/foundation/KeyDemo1.dart';
 import 'package:flutter_learn/foundation/KeyDemo2.dart';
 import 'package:flutter_learn/foundation/KeyDemo3.dart';
 import 'package:flutter_learn/material_widgets/material_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/webview_flutter/webview_flutter_demo1.dart';
+import 'package:flutter_learn/webview_flutter/webview_flutter_demo2.dart';
 import 'package:flutter_learn/widgets/widgets_widgets.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +19,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    //
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -125,7 +130,47 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                       );
                     },
-                    child: const Text("widgets_widgets", selectionColor: Colors.red,)
+                    child: const Text("WidgetsWidgets", selectionColor: Colors.red,)
+                ),
+              ),
+              //
+              SliverToBoxAdapter(//转变为sliver
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) =>  const GetxDemo()
+                          )
+                      );
+                    },
+                    child: const Text("GetxDemo", selectionColor: Colors.red,)
+                ),
+              ),
+              SliverToBoxAdapter(//转变为sliver
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) =>  const WebViewFlutterDemo1()
+                          )
+                      );
+                    },
+                    child: const Text("WebViewFlutterDemo1", selectionColor: Colors.red,)
+                ),
+              ),
+              SliverToBoxAdapter(//转变为sliver
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) =>  const WebViewFlutterDemo2()
+                          )
+                      );
+                    },
+                    child: const Text("WebViewFlutterDemo2", selectionColor: Colors.red,)
                 ),
               ),
             ],

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ScaffoldDemo3 extends StatefulWidget{
-  const ScaffoldDemo3({Key? key}):super(key: key);
+class TabBarViewDemo extends StatefulWidget{
+  const TabBarViewDemo({Key? key}):super(key: key);
 
   @override
-  State<ScaffoldDemo3> createState() => ScaffoldDemo3State();
+  State<TabBarViewDemo> createState() => _TabBarViewDemoState();
 }
 
-class ScaffoldDemo3State extends State<ScaffoldDemo3> with SingleTickerProviderStateMixin{
+class _TabBarViewDemoState extends State<TabBarViewDemo> with SingleTickerProviderStateMixin{
   late TabController _tabController;
    @override
    void initState(){
@@ -25,7 +25,7 @@ class ScaffoldDemo3State extends State<ScaffoldDemo3> with SingleTickerProviderS
           },
         ),
         backgroundColor: Colors.red,
-        title: const Text("this is the third demo of Scaffold"),
+        title: const Text("TabBarViewDemo"),
         actions: [
           IconButton(onPressed: (){}, icon: const Icon(Icons.search)),
           IconButton(onPressed: (){}, icon: const Icon(Icons.more_horiz))
@@ -59,15 +59,22 @@ class ScaffoldDemo3State extends State<ScaffoldDemo3> with SingleTickerProviderS
       body: TabBarView(
         controller: _tabController,
         children: [
-          ListView(children: const [
-          ListTile(title: Text("我是关注列表 "),)
-        ],),
-          ListView(children: const [
-          ListTile(title: Text("我是热门列表 "),)
-        ],),
-          ListView(children: const [
-          ListTile(title: Text("我是视频列表 "),)
-        ],),
+          ListView(
+            children: const [
+              ListTile(title: Text("我是关注列表 "),)
+            ],
+          ),
+          ListView(
+            children: const [
+              ListTile(title: Text("我是热门列表 "),)
+
+            ],
+          ),
+          ListView(
+            children: const [
+              ListTile(title: Text("我是视频列表 "),)
+            ],
+          ),
       ],),
     );
   }

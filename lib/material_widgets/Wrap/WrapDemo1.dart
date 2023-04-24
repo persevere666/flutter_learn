@@ -32,13 +32,14 @@ class WrapDemo1 extends StatelessWidget{
 }
 
 
-
-
-class Button extends StatelessWidget{
-  String text;
-  void Function()? onPressed;
-  Button(this.text, {Key? key, required this.onPressed}):super(key:key);
-
+class Button extends StatefulWidget {
+  final String text;
+  final void Function()? onPressed;
+  const Button(this.text, {Key? key, required this.onPressed}) :super(key: key);
+  @override
+  State<Button> createState() => _ButtonSate();
+}
+class _ButtonSate extends State<Button>{
   @override
   Widget build(BuildContext context){
     return ElevatedButton(
@@ -50,8 +51,8 @@ class Button extends StatelessWidget{
             const Color.fromARGB(100, 21, 20, 20)
           )
         ),
-        onPressed: onPressed,
-        child: Text(text)
+        onPressed: widget.onPressed,
+        child: Text(widget.text)
     );
 
   }

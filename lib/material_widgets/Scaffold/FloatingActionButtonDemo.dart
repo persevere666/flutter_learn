@@ -1,13 +1,14 @@
+//
 import 'package:flutter/material.dart';
 
-class ScaffoldDemo1 extends StatefulWidget{
-  const ScaffoldDemo1({Key? key}):super(key: key);
+class FloatingActionButtonDemo extends StatefulWidget{
+  const FloatingActionButtonDemo({Key? key}):super(key: key);
 
   @override
-  State<ScaffoldDemo1> createState() => ScaffoldDemo1State();
+  State<FloatingActionButtonDemo> createState() => _FloatingActionButtonDemoState();
 }
 
-class ScaffoldDemo1State extends State<ScaffoldDemo1>{
+class _FloatingActionButtonDemoState extends State<FloatingActionButtonDemo>{
 
   int _currentIndex=0;
 
@@ -22,38 +23,32 @@ class ScaffoldDemo1State extends State<ScaffoldDemo1>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: const Text("this is a Scaffold demo"),),
+      appBar: AppBar(title: const Text("this is another Scaffold demo"),),
       drawer: Drawer(
         child: Column(
           children:[
             Row(
               children: [
-                Expanded(
-                  flex: 1,
-                  child:DrawerHeader(
+                 Expanded(
+                    flex: 1,
+                    child: UserAccountsDrawerHeader(
+                      accountName: const Text("张三"),
+                      accountEmail: const Text("123456@qq.com"),
+                      currentAccountPicture: const CircleAvatar(
+                        backgroundImage: NetworkImage("https://c-ssl.duitang.com/uploads/item/201703/30/20170330221558_zhin3.jpeg"),
+                      ),
+                      otherAccountsPictures: [
+                        Image.network("https://c-ssl.duitang.com/uploads/item/201902/24/20190224235231_zbdrs.jpg"),
+                        Image.network("https://c-ssl.duitang.com/uploads/item/201806/26/20180626233414_dondp.jpg")
+                        
+                      ],
                       decoration: const BoxDecoration(
-                          color: Colors.yellow,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                            image: NetworkImage("https://c-ssl.duitang.com/uploads/item/201806/30/20180630132006_KcxlX.jpeg")
+                          image: NetworkImage("https://c-ssl.duitang.com/uploads/item/201806/30/20180630132006_KcxlX.jpeg")
                         )
                       ),
-                      child: Column(
-                        children: const [
-                          ListTile(
-                            leading: CircleAvatar(
-                              backgroundImage: NetworkImage("https://c-ssl.duitang.com/uploads/item/201703/30/20170330221558_zhin3.jpeg"),
-                            ),
-                            title: Text("张三", style: TextStyle(
-                              color: Colors.white
-                            ),),
-                          ),
-                          ListTile(
-                            title: Text("邮箱 123456@qq.com"),
-                          )
-                        ],
-                      )
-                  )
+                    )
                 )
               ],
             ),
@@ -88,8 +83,8 @@ class ScaffoldDemo1State extends State<ScaffoldDemo1>{
         },
         items: const [
           BottomNavigationBarItem(
-            icon:Icon(Icons.home),
-            label:"首页"
+              icon:Icon(Icons.home),
+              label:"首页"
           ),
           BottomNavigationBarItem(
               icon:Icon(Icons.category),
@@ -110,23 +105,23 @@ class ScaffoldDemo1State extends State<ScaffoldDemo1>{
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          setState(() {
-            _currentIndex = 2;
-          });
-        },
-        backgroundColor: _currentIndex==2?Colors.red:Colors.blue,
-        child: Container(
-          height: 60,
-          width: 60,
-          padding: const EdgeInsets.all(2),
-          margin: const EdgeInsets.only(top:4),
-          decoration: BoxDecoration(
-            color: Colors.black12,
-            borderRadius: BorderRadius.circular(30.0),
-          ),
-          child:const Icon(Icons.add),
-        )
+          onPressed: (){
+            setState(() {
+              _currentIndex = 2;
+            });
+          },
+          backgroundColor: _currentIndex==2?Colors.red:Colors.blue,
+          child: Container(
+            height: 60,
+            width: 60,
+            padding: const EdgeInsets.all(2),
+            margin: const EdgeInsets.only(top:4),
+            decoration: BoxDecoration(
+              color: Colors.black12,
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            child:const Icon(Icons.add),
+          )
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ScaffoldDemo4 extends StatefulWidget{
-  const ScaffoldDemo4({Key? key}):super(key: key);
+class TabControllerDemo extends StatefulWidget{
+  const TabControllerDemo({Key? key}):super(key: key);
 
   @override
-  State<ScaffoldDemo4> createState() => ScaffoldDemo4State();
+  State<TabControllerDemo> createState() => _TabControllerDemoState();
 }
 
-class ScaffoldDemo4State extends State<ScaffoldDemo4> with
-    SingleTickerProviderStateMixin
+class _TabControllerDemoState extends State<TabControllerDemo> with SingleTickerProviderStateMixin
     //AutomaticKeepAliveClientMixin
 {
   late TabController _tabController;
@@ -46,7 +45,7 @@ class ScaffoldDemo4State extends State<ScaffoldDemo4> with
               indicatorColor: Colors.yellow,
               labelColor: Colors.white,
               unselectedLabelColor: Colors.black ,
-              indicatorSize: TabBarIndicatorSize.label ,
+              indicatorSize: TabBarIndicatorSize.tab,
               controller: _tabController,
               tabs: const [
                 Tab(child:  Text("主人1"),),

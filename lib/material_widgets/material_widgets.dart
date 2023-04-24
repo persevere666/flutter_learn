@@ -1,15 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
+import 'package:flutter_learn/material_widgets/Button/ButtonDemo.dart';
+import 'package:flutter_learn/material_widgets/Card/CardDemo.dart';
+import 'package:flutter_learn/material_widgets/Icon/IconDemo.dart';
 import 'package:flutter_learn/material_widgets/KeepAlive/KeepAliveDemo1.dart';
 import 'package:flutter_learn/material_widgets/PageView/PageViewDemo1.dart';
 import 'package:flutter_learn/material_widgets/PageView/PageViewDemo2.dart';
 import 'package:flutter_learn/material_widgets/PageView/PageViewDemo3.dart';
 import 'package:flutter_learn/material_widgets/PageView/PageViewDemo4.dart';
-import 'package:flutter_learn/material_widgets/Scaffold/Scaffold_Demo1.dart';
-import 'package:flutter_learn/material_widgets/Scaffold/Scaffold_Demo2.dart';
-import 'package:flutter_learn/material_widgets/Scaffold/Scaffold_Demo3.dart';
-import 'package:flutter_learn/material_widgets/Scaffold/Scaffold_Demo4.dart';
+import 'package:flutter_learn/material_widgets/Scaffold/ScaffoldDemo.dart';
+import 'package:flutter_learn/material_widgets/Scaffold/FloatingActionButtonDemo.dart';
 import "package:flutter_learn/material_widgets/Dialog/DialogDemo.dart";
+import 'package:flutter_learn/material_widgets/Scaffold/TabBarViewDemo.dart';
+import 'package:flutter_learn/material_widgets/Scaffold/TabControllerDemo.dart';
+import 'package:flutter_learn/material_widgets/TextFormField/TextFormFieldDemo.dart';
+import 'package:flutter_learn/material_widgets/Wrap/WrapDemo.dart';
 class MaterialWidgetsPage extends StatefulWidget{
   const MaterialWidgetsPage({Key? key}):super(key:key);
   //
@@ -31,48 +36,48 @@ class _MaterialWidgetsPageState extends State<MaterialWidgetsPage>{
                     Navigator.of(context).push(
                         MaterialPageRoute(
                             builder: (ctx) {
-                              return const ScaffoldDemo1();
+                              return const ScaffoldDemo();
                             }
                         )
                     );
                   },
-                  child: const Text("ScaffoldDemo1")
+                  child: const Text("ScaffoldDemo")
               ),
               CupertinoButton(
                   onPressed: (){
                     Navigator.of(context).push(
                         MaterialPageRoute(
                             builder: (ctx) {
-                              return const ScaffoldDemo2();
+                              return const FloatingActionButtonDemo();
                             }
                         )
                     );
                   },
-                  child: const Text("ScaffoldDemo2")
+                  child: const Text("FloatingActionButtonDemo")
               ),
               CupertinoButton(
                   onPressed: (){
                     Navigator.of(context).push(
                         MaterialPageRoute(
                             builder: (ctx) {
-                              return const ScaffoldDemo3();
+                              return const TabBarViewDemo();
                             }
                         )
                     );
                   },
-                  child: const Text("ScaffoldDemo3")
+                  child: const Text("TabBarViewDemo")
               ),
               CupertinoButton(
                   onPressed: (){
                     Navigator.of(context).push(
                         MaterialPageRoute(
                             builder: (ctx) {
-                              return const ScaffoldDemo4();
+                              return const TabControllerDemo();
                             }
                         )
                     );
                   },
-                  child: const Text("ScaffoldDemo4")
+                  child: const Text("TabControllerDemo")
               ),
               ElevatedButton(
                   onPressed: (){
@@ -145,6 +150,66 @@ class _MaterialWidgetsPageState extends State<MaterialWidgetsPage>{
                     );
                   },
                   child: const Text("KeepAlive Demo1")
+              ),
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (ctx) {
+                              return const IconDemo();
+                            }
+                        )
+                    );
+                  },
+                  child: const Text("IconDemo")
+              ),
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (ctx) {
+                              return const CardDemo();
+                            }
+                        )
+                    );
+                  },
+                  child: const Text("CardDemo")
+              ),
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (ctx) {
+                              return const ButtonDemo();
+                            }
+                        )
+                    );
+                  },
+                  child: const Text("ButtonDemo")
+              ),
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (ctx) {
+                              return const WrapDemo();
+                            }
+                        )
+                    );
+                  },
+                  child: const Text("WrapDemo")
+              ),
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (ctx) {
+                              return const TextFormFieldDemo();
+                            }
+                        )
+                    );
+                  },
+                  child: const Text("TextFormFieldDemo")
               ),
             ],
           )

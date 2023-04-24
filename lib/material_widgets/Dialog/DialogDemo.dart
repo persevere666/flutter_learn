@@ -38,7 +38,6 @@ class _DialogDemoState extends State<DialogDemo>{
 
         }
     );
-    //print(result);
   }
   ///
   ///
@@ -104,9 +103,7 @@ class _DialogDemoState extends State<DialogDemo>{
     );
 
   }
-  void _toast(){
 
-  }
   void _myDialog() async {
     var result = await showDialog(
         barrierDismissible: true,//点击背景，dialog是否消失
@@ -119,7 +116,6 @@ class _DialogDemoState extends State<DialogDemo>{
           );
         }
     );
-    print(result);
   }
   @override
   Widget build(BuildContext context){

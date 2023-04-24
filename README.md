@@ -1,16 +1,16 @@
 # flutter_learn
 
-A new Flutter project.
 
-## Getting Started
+## 安卓emulator无法启动
+    1. 删除目录.Android 下对应的lock文件
+    2. 重启 flutter emulators --launch xxxxxx
 
-This project is a starting point for a Flutter application.
+## webview_flutter: ^4.0.6
+    Android	                        
+          Support SDK 19+ or 20+    
+          minSdkVersion=20
+    IOS: 11.0+
 
-A few resources to get you started if this is your first Flutter project:
+## 在Flutter使用www.iconfont.com中的图标
+    https://blog.csdn.net/ezshine/article/details/124311218
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
